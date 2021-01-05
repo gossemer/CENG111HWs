@@ -1,0 +1,10 @@
+[
+[(9, 7), 4, 'masked', 'notinfected'] ,
+[(14, 9), 1, 'masked', 'infected'] ,
+[(12, 11), 3, 'masked', 'infected'] ,
+[(17, 12), 3, 'notmasked', 'notinfected'] ,
+[(11, 13), 2, 'notmasked', 'infected'] ,
+[(13, 14), 3, 'masked', 'notinfected'] ,
+[(9, 16), 2, 'notmasked', 'notinfected'] ,
+[(20, 23), 5, 'notmasked', 'notinfected'] ,
+]
