@@ -66,16 +66,6 @@ def calculator(tree):
     for i in range(1,len(tree[1])):
         x+= tree[0]*calculator(tree[1][i])
     return x
-    
-def flatten(nested_list):
-    
-    if nested_list ==[]:
-        return []
-        
-    if type(nested_list[0])==list:
-        return flatten(nested_list[0]+nested_list[1:])
-        
-    return [nested_list[0]]+flatten(nested_list[1:])
 
 def name_keeper(tree):
     names = []
