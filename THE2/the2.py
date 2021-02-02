@@ -1,8 +1,3 @@
-#
-# WRITE YOUR CODE HERE AND SEND ONLY THIS FILE TO US.
-#
-# DO NOT DEFINE get_data() here. Check before submitting
-
 import math
 import random
 from evaluator import *    # get_data() will come from this import
@@ -52,22 +47,24 @@ def transmition(D,K,lmb,p1,p2):
 		mask_factor *= lmb
 	if p2[2] == 'masked':
 		mask_factor *= lmb
-	prob = min(1,K/(distance12**2*mask_factor))
+	prob = min(1,K/(distance12**2))
+	prob /= mask_factor
 	is_transmitted = random.choices([1,0],[prob,1-prob])[0]
+	
 	if is_transmitted:
 		if p1[3] == 'notinfected':
-			p1[3] == 'transmitted'
+			p1[3] ='transmitted'
 		elif p2[3] == 'notinfected': 
-			p2[3] == 'transmitted'
+			p2[3] ='transmitted'
 	return p1,p2
 
+M,N,D,K,lmb,mu,universal_state = get_data()
 def new_move():
-	M,N,D,K,lmb,mu,universal_state = get_data()
-	global last_move_table
+	global M,N,D,K,lmb,mu,universal_state
 	for i in universal_state:
 		pot_pos = ind_move(i[1],i[0],last_move_table,mu)
 
-		if 0<=pot_pos[0][0]<N and 0<= pot_pos[0][1] < M and not is_occupied(universal_state,pot_pos[0]):
+		if 0<=pot_pos[0][0]<N and 0<= pot_pos[0][1] < M and (not is_occupied(universal_state,pot_pos[0])):
 			i[0],i[1] = pot_pos
 		
 	for i in range(len(universal_state)):
@@ -77,6 +74,4 @@ def new_move():
 	for p in universal_state:
 		if p[3] == 'transmitted':
 			p[3] = 'infected'
-		
-	print(universal_state)	
 	return universal_state
