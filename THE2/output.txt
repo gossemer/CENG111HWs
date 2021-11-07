@@ -1,0 +1,1 @@
+KONULARINA GORE DAGILMIS PYTHON PACKAGELERİ Web Sitesi: - Django - Flask Mobile Development: - Kivy Machine Learning & Deep Neural Network: - Numpy - Pandas - Matplotlib - Seaborn - Keras - PyTorch - Tensorflow Web Tarama: - BeautifulSoup - Scrappy - Selenium 2D Oyun Yazılımı: - PyGame Machine Learning Sklearn eklemeyi unutmuşum. 
